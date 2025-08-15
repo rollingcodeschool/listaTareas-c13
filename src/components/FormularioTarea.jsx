@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import ListaTarea from "./ListaTarea";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const FormularioTarea = () => {
   const {
@@ -10,9 +11,12 @@ const FormularioTarea = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const [tareas, setTareas] = useState([]);
 
   const posteriorValidacion = (data) => {
     console.log(data.tarea)
+    //guardar la tarea en el array
+    setTareas([...tareas, data.tarea])
     //limpiar el formulario
     reset()
   }
