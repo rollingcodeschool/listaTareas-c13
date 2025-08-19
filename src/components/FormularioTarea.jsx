@@ -42,7 +42,7 @@ const FormularioTarea = () => {
         </Form.Group>
         <Form.Text className="text-danger">{errors.tarea?.message}</Form.Text>
       </Form>
-      <ListaTarea />
+      <ListaTarea tareas={tareas}/>
     </section>
   );
 };
